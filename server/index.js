@@ -5,7 +5,13 @@ const cors = require("cors");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://todo-app-client-one.vercel.app/",
+    methods: ["POST","GET","PUT","DELETE"],
+   
+  })
+);
 
 mongoose
   .connect(
